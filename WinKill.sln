@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinKill", "WinKill\WinKill.vcxproj", "{092BD9BF-9E3B-4374-AA38-EA19C9A09DD4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinKillHook", "WinKillHook\WinKillHook.vcxproj", "{D5D6353E-2C3A-4B54-880C-B2FAC3FDC739}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{092BD9BF-9E3B-4374-AA38-EA19C9A09DD4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{092BD9BF-9E3B-4374-AA38-EA19C9A09DD4}.Debug|Win32.Build.0 = Debug|Win32
+		{092BD9BF-9E3B-4374-AA38-EA19C9A09DD4}.Release|Win32.ActiveCfg = Release|Win32
+		{092BD9BF-9E3B-4374-AA38-EA19C9A09DD4}.Release|Win32.Build.0 = Release|Win32
+		{D5D6353E-2C3A-4B54-880C-B2FAC3FDC739}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D5D6353E-2C3A-4B54-880C-B2FAC3FDC739}.Debug|Win32.Build.0 = Debug|Win32
+		{D5D6353E-2C3A-4B54-880C-B2FAC3FDC739}.Release|Win32.ActiveCfg = Release|Win32
+		{D5D6353E-2C3A-4B54-880C-B2FAC3FDC739}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

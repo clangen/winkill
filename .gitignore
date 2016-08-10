@@ -1,0 +1,7 @@
+**/debug
+**/release
+**/bin
+.vs
+ipch
+*.VC.db
+*.VC.opendb
