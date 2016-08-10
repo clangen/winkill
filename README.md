@@ -7,6 +7,13 @@ winkill lets you temporarily disable the windows key on your keyboard without re
 2. open WinKill.sln
 3. compile and run
 
+# screenshots
+
+there's not much to it -- just a tray icon!
+
+![windows key active](https://raw.githubusercontent.com/clangen/clangen-projects-static/master/winkill/screenshots/active.png)
+![windows key killed](https://raw.githubusercontent.com/clangen/clangen-projects-static/master/winkill/screenshots/killed.png)
+
 # end-user system requirements
 windows xp, vista, or 7. (2000 will probably work, but is untested)
 
