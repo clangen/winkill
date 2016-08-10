@@ -3,7 +3,7 @@ winkill lets you temporarily disable the windows key on your keyboard without re
 
 # building
 
-1. install Visual Studio 2015 community edition
+1. install Visual Studio 2015 (the Community Edition should work fine)
 2. open WinKill.sln
 3. compile and run
 
