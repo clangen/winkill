@@ -30,8 +30,7 @@ WINKILLHOOK_API LRESULT CALLBACK keyboard_proc(int nCode, WPARAM wParam, LPARAM 
         case WM_KEYDOWN:
         case WM_KEYUP:
         case WM_SYSKEYDOWN:
-        case WM_SYSKEYUP:
-            {
+        case WM_SYSKEYUP: {
                 DWORD keyCode = ((PKBDLLHOOKSTRUCT) lParam)->vkCode;
 
                 if ((keyCode == VK_LWIN) || (keyCode == VK_RWIN)) {

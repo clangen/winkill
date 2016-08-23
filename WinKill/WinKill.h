@@ -6,8 +6,7 @@
 
 #include "resource.h"
 
-class WinKillApp : public CWinApp
-{
+class WinKillApp : public CWinApp {
 public:
     WinKillApp();
     virtual BOOL InitInstance();

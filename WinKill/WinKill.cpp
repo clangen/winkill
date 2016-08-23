@@ -10,8 +10,7 @@ WinKillApp::WinKillApp() {
 
 WinKillApp theApp;
 
-BOOL WinKillApp::InitInstance()
-{
+BOOL WinKillApp::InitInstance() {
     WinKillDialog dlg;
     dlg.DoModal();
     return FALSE;

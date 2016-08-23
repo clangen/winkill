@@ -14,7 +14,7 @@
 #define MENU_ITEM_EXIT 1979
 #define MENU_ITEM_TOGGLE_CAPTION L"Toggle"
 #define MENU_ITEM_EXIT_CAPTION L"Exit"
-#define TRAY_ICON_TIP L"WinKill v0.1"
+#define TRAY_ICON_TIP L"WinKill v0.2"
 
 BEGIN_MESSAGE_MAP(WinKillDialog, CDialog)
     ON_WM_PAINT()
