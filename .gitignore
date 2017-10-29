@@ -1,6 +1,7 @@
 **/debug
 **/release
 **/bin
+**/*.aps
 .vs
 ipch
 *.VC.db

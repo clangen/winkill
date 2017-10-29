@@ -14,13 +14,30 @@
 #define MENU_ITEM_EXIT 1979
 #define MENU_ITEM_TOGGLE_CAPTION L"Toggle"
 #define MENU_ITEM_EXIT_CAPTION L"Exit"
-#define TRAY_ICON_TIP L"WinKill v0.2"
+#define TRAY_ICON_TIP L"WinKill v0.3"
 
 BEGIN_MESSAGE_MAP(WinKillDialog, CDialog)
     ON_WM_PAINT()
     ON_WM_QUERYDRAGICON()
     ON_WM_WINDOWPOSCHANGING()
 END_MESSAGE_MAP()
+
+class MyCommandLineInfo : public CCommandLineInfo {
+    public:
+        MyCommandLineInfo() : CCommandLineInfo() {
+            startDisabled = false;
+        }
+
+        virtual void ParseParam(const TCHAR* param, BOOL flag, BOOL last) {
+            if (param) {
+                if (CString(param) == L"startDisabled") {
+                    startDisabled = !!flag;
+                }
+            }
+        }
+
+        bool startDisabled;
+};
 
 WinKillDialog::WinKillDialog(CWnd* parent)
 : CDialog(WinKillDialog::IDD, parent)
@@ -42,7 +59,7 @@ void WinKillDialog::ShowTrayIcon() {
     mTrayIcon.uID = 0;
     mTrayIcon.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
     mTrayIcon.uCallbackMessage = WM_MYTRAYICON;
-    mTrayIcon.hIcon = mKilledIcon;
+    mTrayIcon.hIcon = mHooked ? mKilledIcon : mActiveIcon;
     ::wcscpy_s(mTrayIcon.szTip, 255, TRAY_ICON_TIP);
 
     mTrayIconVisible = (Shell_NotifyIcon(NIM_ADD, &mTrayIcon) != 0);
@@ -96,7 +113,10 @@ BOOL WinKillDialog::OnInitDialog() {
     menuItem.fType = MFT_STRING;
     mTrayMenu.InsertMenuItem(MENU_ITEM_EXIT, &menuItem);
 
-    StartHook();
+    MyCommandLineInfo commandLine;
+    AfxGetApp()->ParseCommandLine(commandLine);
+    commandLine.startDisabled ? StopHook() : StartHook();
+
     ShowTrayIcon();
 
     return TRUE;
