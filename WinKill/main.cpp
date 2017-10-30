@@ -3,6 +3,7 @@
 #include <Shellapi.h>
 #include <tchar.h>
 #include <WinKillHook.h>
+#include <string>
 #include "resource.h"
 
 #define WM_MYTRAYICON WM_USER + 2000
@@ -28,10 +29,13 @@ static void startHook();
 static void stopHook();
 static void toggleHook();
 static void createWindow(HINSTANCE instance);
+static bool startDisabled(LPWSTR args);
 static LRESULT CALLBACK windowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 int CALLBACK wWinMain(HINSTANCE instance, HINSTANCE prev, LPWSTR args, int showType) {
     createWindow(instance);
+
+    startDisabled(args) ? stopHook() : startHook();
 
     MSG msg = { };
     while (GetMessage(&msg, nullptr, 0, 0)) {
@@ -86,6 +90,15 @@ static LRESULT CALLBACK windowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lP
     }
 
     return DefWindowProc(hwnd, msg, wParam, lParam);
+}
+
+static bool startDisabled(LPWSTR args) {
+    if (!args) {
+        return false;
+    }
+
+    std::wstring str(args);
+    return str.find(L"/startDisabled") != std::string::npos;
 }
 
 static void createWindow(HINSTANCE instance) {
