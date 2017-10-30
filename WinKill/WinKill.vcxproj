@@ -98,6 +98,10 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <OutputFile>.\Release/WinKill.bsc</OutputFile>
     </Bscmake>
+    <PostBuildEvent>
+      <Command>if exist "z:\upx.exe" "z:\upx.exe" -9 "$(OutDir)WinKill.exe"
+if exist "z:\upx.exe" "z:\upx.exe" -9 "$(OutDir)WinKillHook.dll"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
