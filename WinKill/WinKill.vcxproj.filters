@@ -29,21 +29,12 @@
     <ClInclude Include="StdAfx.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="WinKill.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="WinKillDialog.h">
-      <Filter>src</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="StdAfx.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="WinKill.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="WinKillDialog.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

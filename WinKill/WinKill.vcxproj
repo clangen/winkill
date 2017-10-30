@@ -20,13 +20,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v141_xp</PlatformToolset>
-    <UseOfMfc>Static</UseOfMfc>
+    <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v141_xp</PlatformToolset>
-    <UseOfMfc>Static</UseOfMfc>
+    <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
@@ -154,16 +154,13 @@
   <ItemGroup>
     <ClInclude Include="Resource.h" />
     <ClInclude Include="StdAfx.h" />
-    <ClInclude Include="WinKill.h" />
-    <ClInclude Include="WinKillDialog.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="WinKill.cpp" />
-    <ClCompile Include="WinKillDialog.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WinKill.rc" />
